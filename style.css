@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root {
+    --greenColor: rgba(40, 161, 36, 0.925);
+    --handwritingFont: 'Indie Flower', cursive;
+    --displayFont: 'Luckiest Guy', cursive;
+    --defaultTransition: all 0.3s;
+}
+
+::selection {
+    color: white;
+    background-color: gray;
+}
+
+body {
+    background-image: url(source\ files/cork.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 2rem;
+    text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.753);
+    font-family: var(--displayFont);
+    font-size: 4rem;
+    letter-spacing: 0.05rem;
+    /* font-weight: lighter; */
+}
+
+/* INPUTS SECTION */
+#taskTextBox {
+    font-family: var(--handwritingFont);
+    margin: 1rem auto;
+    padding: 1.4rem 1rem 0 5rem;
+    line-height: 33px;
+    background-image: url(source\ files/formBG.jpg);
+    background-attachment: local;
+    border: none;
+    border-radius: 20px 0 20px 0;
+    width: 555px;
+    height: 160px;
+    display: block;
+    font-size: 1.5rem;
+    transition: var(--defaultTransition);
+}
+
+#taskTextBox:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.deadline > label {
+    color: #333;
+    font-family: var(--handwritingFont);
+    font-size: 2rem;
+    text-shadow: 0px 0px 2px black;
+    vertical-align: middle;
+}
+
+.deadline > input {
+    font-family: var(--handwritingFont);
+    margin: 0 .5rem 1rem .5rem;
+    background-color: rgba(255, 255, 255, 0.555);
+    padding: .2rem 1rem;
+    font-size: 1.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.555);
+    transition: var(--defaultTransition);
+}
+
+.deadline > input:hover {
+    background-color: rgba(255, 255, 255, 0.800);
+}
+
+.btns > input {
+    margin: 1rem auto 1rem 1rem;
+    padding: 0rem 2rem;
+    display: inline-block;
+    cursor: pointer;
+    font-family: var(--displayFont);
+    font-size: 2rem;
+    border: none;
+    /* border-radius: 20px 0 20px 0; */
+    background-color: var(--greenColor);
+    color: #ffffff;
+    transition: var(--defaultTransition);
+}
+
+.btns > input:last-child {
+    background-color: rgb(201, 0, 0);
+    color: #fff;
+}
+
+.btns > input:hover {
+    box-shadow: 3px 3px 3px #333;
+}
+
+.btns > input:active {
+    color: #333;
+}
+
+/* NOTES SECTION */
+#notesSection {
+    margin: auto 1rem;
+}
+
+.note {
+    position: relative;
+    margin: 1rem;
+    background-image: url(source\ files/noteBG.png);
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    animation: opacity 0.3s;
+    transition: var(--defaultTransition);
+}
+
+@keyframes opacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#removeNoteButton {
+    position: absolute;
+    font-size: 1.1rem;
+    top: 13px;
+    left: 149px;
+    /* transform: rotate(4deg); */
+    text-shadow: 0px 0px 3px rgb(0, 0, 0);
+    opacity: 0;
+    cursor: pointer;
+    transition: var(--defaultTransition);
+}
+
+.note:hover #removeNoteButton {
+    opacity: 1;
+    transform: rotate(180deg);
+}
+
+#removeNoteButton:active {
+    text-shadow: 0px 0px 3px rgb(255, 255, 255);
+    color: white;
+}
+
+.removeAnimation {
+    transform: scale(2);
+    opacity: 0;
+}
+
+.noteText {
+    font-family: var(--handwritingFont);
+    font-size: 1.3rem;
+    text-align: start;
+    width: 77%;
+    max-height: 160px;
+    top: 4.6rem;
+    left: 2.8rem;
+    position: absolute;
+    transform: rotate(4.5deg);
+    line-height: 2rem;
+    overflow: scroll;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* text-overflow: ellipsis; */
+    scroll-behavior: smooth;
+}
+
+.noteDeadline {
+    font-family: var(--displayFont);
+    font-size: .7rem;
+    font-weight: bolder;
+    position: absolute;
+    transform: rotate(4deg);
+    bottom: 2.7rem;
+    left: 1.8rem;
+    letter-spacing: 0.2rem;
+}
+
+
+/* Tablet */
+@media (orientation: portrait) {
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    #taskTextBox {
+        width: 90vw;
+    }
+    
+    .deadline > label {
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    .deadline > input {
+        font-size: 1rem;
+        margin: 0rem;
+    }
+
+    .btns > input {
+        font-size: 1.8rem;
+        margin: 1rem auto 1rem 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+
+    #taskTextBox {
+        width: 90vw;
+        height: 22vh;
+        background-size: contain;
+        padding: .1rem .3rem .3rem 3rem;
+        line-height: 35.5px;
+    }
+}
+

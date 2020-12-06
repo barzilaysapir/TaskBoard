@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- handwriting font -->
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- display font -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Front-End Project</title>
+</head>
+
+<body>
+    <h1>My Task Board</h1>
+    
+    <div class="addNotesSection">
+        <div class="form">
+            <textarea autofocus name="taskTextBox" id="taskTextBox" placeholder=" Write a task.."></textarea>
+
+            <div class="deadline">
+                <label for="deadline">Set Deadline : </label>
+                <input type="date" id="date" name="date">
+                <input type="time" id="time" name="time">
+            </div>
+            
+            <div class="btns">
+                <input type="submit" id="addNoteBtn" value="Add Note">
+                <input type="submit" id="clearBtn" value="Clear">
+            </div>
+        </div>
+    </div>
+
+    <div id="notesSection" class="displayNotesSection">
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
+
