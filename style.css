@@ -41,7 +41,7 @@ h1 {
     margin: 1rem auto;
     padding: 1.4rem 1rem 0 5rem;
     line-height: 33px;
-    background-image: url(source\ files/formBG.jpg);
+    background-image: url(source\ files/formbg.jpg);
     background-attachment: local;
     border: none;
     border-radius: 20px 0 20px 0;
@@ -220,6 +220,14 @@ h1 {
         background-size: contain;
         padding: .1rem .3rem .3rem 3rem;
         line-height: 35.5px;
+    }
+
+    .btns > input {
+        padding: 0 1rem;
+    }
+
+    .note {
+        margin: 0;
     }
 }
 
